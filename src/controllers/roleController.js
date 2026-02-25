@@ -1,1 +1,1 @@
-const RoleModel = requiere('../models/roleModel');
+const RoleModel = require('../models/roleModel');

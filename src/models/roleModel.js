@@ -1,4 +1,4 @@
-const db = requiere('../config/conexion_db');
+const db = require('../config/conexion_db');
 
 const RoleModel = {
     // obtener todos los roles

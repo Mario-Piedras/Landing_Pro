@@ -1,4 +1,4 @@
-const db = requiere('../config/conexion_db');
+const db = require('../config/conexion_db');
 
 const NegocioModel = {
     async findById(id) {
