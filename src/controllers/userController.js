@@ -71,7 +71,29 @@ const UserController = {
                 message: 'Usuario actualizado correctamente'
             });
         } catch (error) {
-            next(error)
+            next(error);
+        }
+    },
+
+    async delete(req, res, next) {
+        try{
+            const { id } = req.params;
+            const currentUserId = req.user.id_usuario;
+
+            // Llamamos al servicio.
+            // Si el usuario no exite, el servicio lanzará el error 404.
+            // Si intenta borrarse a sí mismo, lanzará el error 403.
+            // Si todo sale bien, la ejecución continua.
+            await UserService.deleteUser(id, currentUserId);
+
+            res.status(httpStatus.OK).json({
+                status: 'success',
+                message: 'Usuario eliminado correctamente'
+            });
+        } catch (error) {
+            next(error);
         }
     }
-}
+};
+
+module.exports = UserController;
