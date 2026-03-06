@@ -33,7 +33,7 @@ const AuthController = {
     async login(req, res, next) {
         try {
             // 1. Validación de entrada
-            const validation = validateLogin(res.body);
+            const validation = validateLogin(req.body);
 
             if (!validation.success) {
                 const errorMessage = validation.error.errors.map(e => e.message).join(', ');

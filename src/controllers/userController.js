@@ -1,7 +1,7 @@
 const UserService = require('../services/userService');
 const AppError = require('../errors/AppError');
 const httpStatus = require('../constants/httpStatus');
-const { validateCreateUser, validateUpdateUser } = require('../validaters/userValidator'); // <--- IMPORTACIÓN NUEVA
+const { validateCreateUser, validateUpdateUser } = require('../validators/userValidator'); // <--- IMPORTACIÓN NUEVA
 
 const UserController = {
     async getAll(req, res, next) {
