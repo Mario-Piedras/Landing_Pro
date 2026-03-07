@@ -23,6 +23,6 @@ router.put('/:id', restrictTo('Actualizar'), UserController.update);
 
 // 4. Eliminar usuario (Solo Admin/Eliminar)
 // DELETE /api/v1/users/:id
-router.delete('id', restrictTo('Eliminar'), UserController.delete);
+router.delete('/:id', restrictTo('Eliminar'), UserController.delete);
 
 module.exports = router;
